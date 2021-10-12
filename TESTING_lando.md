@@ -74,10 +74,10 @@ lando lagoon --version | grep lagoon
 lando ssh -s cli -c "curl -kL http://nginx:8080" | grep "Welcome to Drush Site-Install"
 
 # Should have Elasticsearch running
-docker-compose exec -T cli bash -c "curl -kL http://elasticsearch:9200" | grep "docker-cluster"
+lando ssh -s cli -c "curl -kL http://elasticsearch:9200" | grep "docker-cluster"
 
 # Should have Elasticsearch cluster healthy
-docker-compose exec -T cli bash -c "curl -kL http://elasticsearch:9200/_cluster/health" | grep "green"
+lando ssh -s cli -c "curl -kL http://elasticsearch:9200/_cluster/health" | grep "green"
 
 # Should be able to db-export and db-import the database
 lando db-export test.sql
