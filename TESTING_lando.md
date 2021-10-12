@@ -37,6 +37,7 @@ docker ps --filter label=com.docker.compose.project=drupal9exampleelastic | grep
 docker ps --filter label=com.docker.compose.project=drupal9exampleelastic | grep Up | grep drupal9exampleelastic_mailhog_1
 docker ps --filter label=com.docker.compose.project=drupal9exampleelastic | grep Up | grep drupal9exampleelastic_php_1
 docker ps --filter label=com.docker.compose.project=drupal9exampleelastic | grep Up | grep drupal9exampleelastic_cli_1
+docker ps --filter label=com.docker.compose.project=drupal9exampleelastic | grep Up | grep drupal9exampleelastic_elasticsearch_1
 docker ps --filter label=com.docker.compose.project=drupal9exampleelastic | grep Up | grep drupal9exampleelastic_lagooncli_1
 
 # Should ssh against the cli container by default
