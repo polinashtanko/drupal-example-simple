@@ -1,5 +1,5 @@
-Lando Drupal 9 Simple - php7.4, nginx, mariadb
-==============================================
+Lando Drupal 9 Elastic - php7.4, nginx, mariadb, elasticsearch
+==============================================================
 
 This example exists primarily to test the following documentation:
 
@@ -32,18 +32,18 @@ lando drush cr -y
 lando drush status | grep "Drupal bootstrap" | grep "Successful"
 
 # Should have all the services we expect
-docker ps --filter label=com.docker.compose.project=drupal9examplesimple | grep Up | grep drupal9examplesimple_nginx_1
-docker ps --filter label=com.docker.compose.project=drupal9examplesimple | grep Up | grep drupal9examplesimple_mariadb_1
-docker ps --filter label=com.docker.compose.project=drupal9examplesimple | grep Up | grep drupal9examplesimple_mailhog_1
-docker ps --filter label=com.docker.compose.project=drupal9examplesimple | grep Up | grep drupal9examplesimple_php_1
-docker ps --filter label=com.docker.compose.project=drupal9examplesimple | grep Up | grep drupal9examplesimple_cli_1
-docker ps --filter label=com.docker.compose.project=drupal9examplesimple | grep Up | grep drupal9examplesimple_lagooncli_1
+docker ps --filter label=com.docker.compose.project=drupal9exampleelastic | grep Up | grep drupal9exampleelastic_nginx_1
+docker ps --filter label=com.docker.compose.project=drupal9exampleelastic | grep Up | grep drupal9exampleelastic_mariadb_1
+docker ps --filter label=com.docker.compose.project=drupal9exampleelastic | grep Up | grep drupal9exampleelastic_mailhog_1
+docker ps --filter label=com.docker.compose.project=drupal9exampleelastic | grep Up | grep drupal9exampleelastic_php_1
+docker ps --filter label=com.docker.compose.project=drupal9exampleelastic | grep Up | grep drupal9exampleelastic_cli_1
+docker ps --filter label=com.docker.compose.project=drupal9exampleelastic | grep Up | grep drupal9exampleelastic_lagooncli_1
 
 # Should ssh against the cli container by default
 lando ssh -c "env | grep LAGOON=" | grep cli-drupal
 
 # Should have the correct environment set
-lando ssh -c "env" | grep LAGOON_ROUTE | grep drupal9-example-simple.lndo.site
+lando ssh -c "env" | grep LAGOON_ROUTE | grep drupal9-example-elastic.lndo.site
 lando ssh -c "env" | grep LAGOON_ENVIRONMENT_TYPE | grep development
 
 # Should be running PHP 7.4
