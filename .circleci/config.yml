@@ -8,6 +8,10 @@ commands:
     steps:
       # build docker compose project and setup network
       - run:
+          name: set vm.max_map_count for elasticsearch
+          command: |
+            ssh remote-docker 'sudo sysctl -w vm.max_map_count=262144'
+      - run:
           name: Update codebase to follow CI configuration
           command: |
             sed -i -e "/###/d" docker-compose.yml
@@ -57,7 +61,7 @@ commands:
 executors:
   php_docker:
     docker:
-      - image: circleci/php:8.0-cli
+      - image: circleci/php:7.4-cli
         user: root
         environment:
           COMPOSER_ALLOW_SUPERUSER: 1
@@ -92,7 +96,7 @@ jobs:
 
   leia-tests:
     docker:
-      - image: circleci/php:8.0-cli-node
+      - image: circleci/php:7.4-cli-node
         user: root
         environment:
           COMPOSER_ALLOW_SUPERUSER: 1
@@ -100,6 +104,10 @@ jobs:
       - checkout
       - setup_remote_docker:
           version: 20.10.6
+      - run:
+          name: set vm.max_map_count for elasticsearch
+          command: |
+            ssh remote-docker 'sudo sysctl -w vm.max_map_count=262144'
       - run:
           name: Install Leia and dependencies
           command: yarn add leia-parser mocha chai command-line-test
@@ -112,7 +120,7 @@ jobs:
 
   leia-tests-latest:
     docker:
-      - image: circleci/php:8.0-cli-node
+      - image: circleci/php:7.4-cli-node
         user: root
         environment:
           COMPOSER_ALLOW_SUPERUSER: 1
@@ -120,6 +128,10 @@ jobs:
       - checkout
       - setup_remote_docker:
           version: 20.10.6
+      - run:
+          name: set vm.max_map_count for elasticsearch
+          command: |
+            ssh remote-docker 'sudo sysctl -w vm.max_map_count=262144'
       - run:
           name: use testlagoon repo instead of uselagoon
           command: |
