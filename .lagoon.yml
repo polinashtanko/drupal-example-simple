@@ -25,12 +25,9 @@ tasks:
         service: cli
 
 
-
 environments:
-  9.x:
-    # routes:
-    cronjobs:
-      - name: drush cron
-        schedule: "*/15 * * * *"
-        command: drush cron
-        service: cli
+  live:
+    routes:
+      - node:
+        - "test6.polina.com":           
+           tls-acme: 'false'
