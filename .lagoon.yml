@@ -34,21 +34,10 @@ tasks:
 
 
 environments:
-  9.x:
+  main:
     routes:
       - nginx:
-        - drupal9.amazee.io:
-            annotations:
-              nginx.ingress.kubernetes.io/server-snippet: |
-                add_header X-BlackLivesMatter ⬛️⬛️⬛️⬛️⬛️⬛️;
-                add_header X-BlackLivesMatter ⬛️⬛️⬛️⬛️⬛️⬛️;
-                add_header X-BlackLivesMatter ⬛️⬛️⬛️⬛️⬛️⬛️;
-                add_header X-BlackLivesMatter ⬛️⬛️⬛️⬛️⬛️⬛️;
-                add_header X-BlackLivesMatter ⬛️⬛️⬛️⬛️⬛️⬛️;
-                add_header X-BlackLivesMatter ⬛️⬛️⬛️⬛️⬛️⬛️;
-                add_header X-Drupal "#Drupal9 on Lagoon #CelebrateDrupal";
-    cronjobs:
-      - name: drush cron
-        schedule: "*/15 * * * *"
-        command: drush cron
-        service: cli
+        - "test6.polina.com":           
+           tls-acme: 'true'
+        - "test6.polina1.com":           
+           tls-acme: 'true'
