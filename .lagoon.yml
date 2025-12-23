@@ -28,5 +28,5 @@ environments:
       - node:
           - example.com:
               alternativenames:
-                - www.example.com
-                - en.example.com
+                - www.example-polina-test.com
+                - en.example-polina-test.com
