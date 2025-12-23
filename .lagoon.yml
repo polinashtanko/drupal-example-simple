@@ -22,8 +22,11 @@ tasks:
 
 
 
-main:
-  routes:
-    - nginx:
-      - foobar.foobarfoobarfoobarfoobarverylongnameverylongname.com:
-        tls-acme: true
+environments:
+  main:
+    routes:
+      - nginx:
+        - "test6.foobarfoobarfoobarverylongnameverylongname.com":           
+           tls-acme: 'true'
+        - "test6.polina1.com":           
+           tls-acme: 'true'
