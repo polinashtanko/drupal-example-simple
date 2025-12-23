@@ -19,10 +19,6 @@ tasks:
           fi
         service: cli
     - run:
-        name: drush cim
-        command: drush -y cim
-        service: cli
-    - run:
         name: drush updb
         command: drush -y updb
         service: cli
