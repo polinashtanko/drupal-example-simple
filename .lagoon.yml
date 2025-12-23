@@ -22,11 +22,9 @@ tasks:
 
 
 
-environments:
-  main:
-    routes:
-      - nginx:
-        - "test6.polina.com":           
-           tls-acme: 'true'
-        - "test6.polina1.com":           
-           tls-acme: 'true'
+main:
+  environments: {}
+  routes:
+    autogenerate:
+      prefixes:
+      - ireland
