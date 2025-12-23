@@ -23,8 +23,7 @@ tasks:
 
 
 main:
-  environments: {}
   routes:
-    autogenerate:
-      prefixes:
-      - ireland
+    - nginx:
+      - foobar.foobarfoobarfoobarfoobarverylongnameverylongname.com:
+        tls-acme: true
