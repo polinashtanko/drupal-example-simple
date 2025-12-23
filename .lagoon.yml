@@ -26,7 +26,7 @@ environments:
   main:
     routes:
       - nginx:
-        - "test6.foobarfoobarfoobarverylongnameverylongname.com":           
-           tls-acme: 'true'
-        - "test6.polina1.com":           
-           tls-acme: 'true'
+        - a.example.com:
+            pathRoutes:
+              - toService: nginx
+                path: /api/v1
