@@ -25,8 +25,8 @@ tasks:
 environments:
   main:
     routes:
-      - nginx:
-        - a.example.com:
-            pathRoutes:
-              - toService: nginx
-                path: /api/v1
+      - node:
+          - example.com:
+              alternativenames:
+                - www.example.com
+                - en.example.com
