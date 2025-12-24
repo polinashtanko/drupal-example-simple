@@ -28,5 +28,5 @@ environments:
       - node:
           - example-polina-test.com:
               alternativenames:
-                - www.example-polina-test.com
-                - en.example-polina-test.com
+                - www.test6.foobar.com
+                - api.test6.foobarfoobar.com
