@@ -8,7 +8,7 @@ environments:
   main:
     routes:
       - node:
-          - foobar123.test6.com:
+          - foobarpolina123.test6.com:
               alternativenames:
-                - www.test6.foobar.com
-                - api.test6.foobarfoobar.com
+                - www.test6.foobarpolina.com
+                - api.test6.foobarfoobarpolina.com
