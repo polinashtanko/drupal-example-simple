@@ -10,5 +10,5 @@ environments:
       - node:
           - foobarpolina123.test6.amazee.io:
               alternativenames:
-                - www.test6.polina-test.amazee.io
-                - api.test6.foobarfoobarpolina.amazee.io
+                - www.polina-test.test6.amazee.io
+                - api.foobarfoobarpolina.test6.amazee.io
